@@ -1,7 +1,26 @@
-* {
-  box-sizing: border-box; }
+.cursor--pointer {
+  cursor: pointer; }
 
-body {
-  margin: 0;
-  background: #e9ebee;
-  color: #1d2129; }
+.padding--0 {
+  padding: 0 !important; }
+
+.div--progress {
+  background-color: #dfdfdf;
+  border-radius: 20px; }
+
+.progress {
+  background: #ee5f13;
+  border-radius: 20px; }
+
+i.icon.close--icon {
+  float: right !important;
+  margin-bottom: 10px; }
+
+div.ui.segment.segment--card {
+  background: #eff0f0; }
+
+div.ui.grid div.row.remove--boxShadow {
+  box-shadow: none !important; }
+
+div.ui.header.marginTop--0 {
+  margin-top: 0 !important; }

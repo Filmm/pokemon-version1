@@ -10,13 +10,8 @@ class LayoutComponent extends React.Component {
     render() {
         return (
             <div>
-                <Grid columns={2} doubling>
-                    <Grid.Column>
-                        <CardComponent />
-                    </Grid.Column>
-                    <Grid.Column>
-                        <CardComponent />
-                    </Grid.Column>
+                <Grid columns={2}>
+                    <CardComponent />
                 </Grid>
             </div>
         )

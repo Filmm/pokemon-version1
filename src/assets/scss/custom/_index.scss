@@ -1,0 +1,17 @@
+.cursor--pointer {
+  cursor: pointer;
+}
+
+.padding--0 {
+  padding: 0 !important;
+}
+
+.div--progress {
+  background-color: $bg--progressBar;
+  border-radius: 20px;
+}
+
+.progress {
+  background: $progressBar--color;
+  border-radius: 20px;
+}
