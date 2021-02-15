@@ -2,19 +2,27 @@ import React from 'react';
 import { Progress, Card, Header, Image, Segment, Icon, Message, Table, Grid } from 'semantic-ui-react';
 import { mockData } from "./mockData";
 
+import { connect } from 'react-redux';
+import { pokemonActions } from '../../_actions/pokemon.actions';
 class CardComponent extends React.Component {
     state = {
-
+        pokemon: [1,2,3,4,5],
+        list: []
     }
 
-    renderMessageContent =() => {
+   componentDidMount (){
+       this.props.getPokemonList([10]);
 
+       this.setState({
+           list: this.props.pokemonList
+       }, ()=> console.log('tesst',this.state.list))
     }
 
     render() {
         return (
             <>
-            {mockData.data.map((item, index) =>
+            <Image src={this.props.photo}/>
+            {/* {this.props.pokemonList && this.props.pokemonList.map((item, index) =>
             <Grid.Column>
                 <Segment>
                     <Grid>
@@ -69,10 +77,19 @@ class CardComponent extends React.Component {
                     </Grid>
                 </Segment>
             </Grid.Column>
-            )}
+            )} */}
             </>
         )
     }
 }
 
-export default CardComponent;
+const mapStateToProps = (state) => ({
+    pokemonList: state.pokemon.pokemonList,
+    photo: state.pokemon.photo
+  });
+
+  const mapDispatchToProps = (dispatch) => ({
+    getPokemonList:(i) => dispatch(pokemonActions.getPokemonList(i))
+  });
+
+  export default connect(mapStateToProps, mapDispatchToProps)(CardComponent);
